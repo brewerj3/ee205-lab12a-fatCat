@@ -60,6 +60,10 @@ public:
     Weight( float newWeight, float newMaxWeight );
     Weight( UnitOfWeight newUnitOfWeight, float newMaxWeight );
     Weight( float newWeight, UnitOfWeight newUnitOfWeight, float newMaxWeight );
+
+    //Operators
+    bool operator==(const Weight& rhs_Weight ) const ;
+
 private:
     UnitOfWeight unitOfWeight = POUND;
     float weight = UNKNOWN_WEIGHT;

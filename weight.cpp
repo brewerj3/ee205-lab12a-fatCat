@@ -180,6 +180,12 @@ Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newM
     bWeightHasMax = true;
 }
 
+bool Weight::operator==(const Weight &rhs_Weight) const {
+    float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
+    float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
+    return false;
+}
+
 std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
     switch( rhs_UnitOfWeight ) {
         case Weight::POUND: return lhs_stream << Weight::POUND_LABEL;
