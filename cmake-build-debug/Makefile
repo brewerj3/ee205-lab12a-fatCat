@@ -129,6 +129,30 @@ untitled1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/build
 .PHONY : untitled1/fast
 
+Weight.o: Weight.cpp.o
+.PHONY : Weight.o
+
+# target to build an object file
+Weight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.o
+.PHONY : Weight.cpp.o
+
+Weight.i: Weight.cpp.i
+.PHONY : Weight.i
+
+# target to preprocess a source file
+Weight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.i
+.PHONY : Weight.cpp.i
+
+Weight.s: Weight.cpp.s
+.PHONY : Weight.s
+
+# target to generate assembly for a file
+Weight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.s
+.PHONY : Weight.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled1"
+	@echo "... Weight.o"
+	@echo "... Weight.i"
+	@echo "... Weight.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
