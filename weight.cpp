@@ -19,6 +19,18 @@ const float Weight::KILOGRAMS_IN_A_SLUG = 14.59390 ;
 const float Weight::POUNDS_IN_A_KILOGRAM = 2.20462 ;
 const float Weight::UNKNOWN_WEIGHT = -1;
 
+const std::string POUND_LABEL = "Pound";
+const std::string SLUG_LABEL = "Slug";
+const std::string KILOGRAM_LABEL = "Kilogram";
+
+std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
+    switch( rhs_UnitOfWeight ) {
+        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL;
+        case Weight::KILOGRAM: return lhs_stream << Weight::KILOGRAM_LABEL;
+        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL;
+    }
+}
+
 float Weight::fromSlugToKilogram(float slug) noexcept {
     return slug * KILOGRAMS_IN_A_SLUG;
 }

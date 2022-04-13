@@ -19,6 +19,10 @@ public:
     static const float POUNDS_IN_A_KILOGRAM;
     static const float UNKNOWN_WEIGHT;
 
+    static const std::string POUND_LABEL;
+    static const std::string SLUG_LABEL;
+    static const std::string KILOGRAM_LABEL;
+
     //Conversion methods
     static float fromSlugToKilogram( float slug ) noexcept;
     static float fromKilogramToSlug( float kilogram ) noexcept;
