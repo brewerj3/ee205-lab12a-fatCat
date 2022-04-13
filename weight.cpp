@@ -11,4 +11,7 @@
 
 #include "weight.h"
 
-static const float gravitationalAcceleration = 9.8;
+const float Weight::GRAVITATIONAL_ACCELERATION = 9.8 ;
+
+const float Weight::KILOGRAMS_IN_A_SLUG = 14.59390 ;
+const float Weight::NEWTONS_IN_A_POUND = 4.448222 ;
