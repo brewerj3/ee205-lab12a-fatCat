@@ -72,7 +72,10 @@ Weight::UnitOfWeight Weight::getWeightUnit() const noexcept {
 }
 
 void Weight::setWeight(float newWeight) {
-    //@TODO add validation later
+    if( !isWeightValid( newWeight ) ){
+        std::cout << "Invalid Weight when trying to set weight" << std::endl;
+        return;
+    }
     weight = newWeight;
 
 }
