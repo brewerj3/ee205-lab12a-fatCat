@@ -15,6 +15,7 @@
 #include <cstring>
 
 #include "weight.h"
+#include "config.h"
 
 const float Weight::KILOGRAMS_IN_A_SLUG = 14.59390 ;
 const float Weight::POUNDS_IN_A_KILOGRAM = 2.20462 ;
