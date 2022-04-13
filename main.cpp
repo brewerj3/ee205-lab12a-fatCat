@@ -11,7 +11,10 @@
 
 #include <iostream>
 
+#include "weight.h"
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Weight weightTestOne;
+    weightTestOne.dump();
     return 0;
 }
