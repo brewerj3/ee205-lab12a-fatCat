@@ -9,34 +9,51 @@
 /// @date   12_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
 class Weight{
-private:
+public:
     enum UnitOfWeight{ POUND, SLUG, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
 
     static const float KILOGRAMS_IN_A_SLUG;
     static const float POUNDS_IN_A_KILOGRAM;
-    static const float POUNDS_IN_A_SLUG;
+    static const float UNKNOWN_WEIGHT;
 
+    //Conversion methods
     static float fromSlugToKilogram( float slug ) noexcept;
-    static float fromSlugToPound( float slug ) noexcept;
-
     static float fromKilogramToSlug( float kilogram ) noexcept;
     static float fromKilogramToPound( float kilogram ) noexcept;
-
     static float fromPoundToKilogram( float pound ) noexcept;
-    static float fromPoundToSlug( float pound ) noexcept;
 
-
-
-    float currentWeight;
-    UnitOfWeight currentUnit;
-public:
-
+    //Convert between unit types
     static float convertWeight( float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit ) noexcept;
 
+    //getters
+    float getWeight() const noexcept;
+    float getWeight( UnitOfWeight weightUnit );
+    float getMaxWeight() const noexcept;
+    UnitOfWeight getWeightUnit() const noexcept;
+
+    //setters
+    void setWeight( float newWeight );
+    void setWeight( float newWeight, UnitOfWeight newUnit );
+
+    //bools
+    bool isWeightKnown() const noexcept;
+    bool hasMaxWeight() const noexcept;
+    bool isWeightValid( float weightToValidate );
+    bool validate() const noexcept;
+
+    //Constructors
+    Weight() noexcept;
+    Weight( float newWeight );
+    Weight( UnitOfWeight newUnitOfWeight ) noexcept;
+    Weight( float newWeight, UnitOfWeight newUnitOfWeight );
+    Weight( float newWeight, float newMaxWeight );
+    Weight( UnitOfWeight newUnitOfWeight, float newMaxWeight );
+    Weight( float newWeight, UnitOfWeight newUnitOfWeight, float newMaxWeight );
+private:
+    UnitOfWeight unitOfWeight = POUND;
+    float weight;
+    float maximumWeight;
+    bool bWeightHasMax = false;
+    bool bWeightIsKnown = false;
 };

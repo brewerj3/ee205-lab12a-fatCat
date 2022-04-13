@@ -117,48 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled1
+# Target rules for targets named fatCat
 
 # Build rule for target.
-untitled1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled1
-.PHONY : untitled1
+fatCat: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fatCat
+.PHONY : fatCat
 
 # fast build rule for target.
-untitled1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/build
-.PHONY : untitled1/fast
-
-Weight.o: Weight.cpp.o
-.PHONY : Weight.o
-
-# target to build an object file
-Weight.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.o
-.PHONY : Weight.cpp.o
-
-Weight.i: Weight.cpp.i
-.PHONY : Weight.i
-
-# target to preprocess a source file
-Weight.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.i
-.PHONY : Weight.cpp.i
-
-Weight.s: Weight.cpp.s
-.PHONY : Weight.s
-
-# target to generate assembly for a file
-Weight.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Weight.cpp.s
-.PHONY : Weight.cpp.s
+fatCat/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/build
+.PHONY : fatCat/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,8 +150,32 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+weight.o: weight.cpp.o
+.PHONY : weight.o
+
+# target to build an object file
+weight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/weight.cpp.o
+.PHONY : weight.cpp.o
+
+weight.i: weight.cpp.i
+.PHONY : weight.i
+
+# target to preprocess a source file
+weight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/weight.cpp.i
+.PHONY : weight.cpp.i
+
+weight.s: weight.cpp.s
+.PHONY : weight.s
+
+# target to generate assembly for a file
+weight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/weight.cpp.s
+.PHONY : weight.cpp.s
 
 # Help Target
 help:
@@ -185,13 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... untitled1"
-	@echo "... Weight.o"
-	@echo "... Weight.i"
-	@echo "... Weight.s"
+	@echo "... fatCat"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... weight.o"
+	@echo "... weight.i"
+	@echo "... weight.s"
 .PHONY : help
 
 

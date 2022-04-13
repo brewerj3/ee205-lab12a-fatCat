@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /tmp/tmp.p3vpVaVXj0/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/untitled1.dir/all
+all: CMakeFiles/fatCat.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/untitled1.dir/clean
+clean: CMakeFiles/fatCat.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/untitled1.dir
+# Target rules for target CMakeFiles/fatCat.dir
 
 # All Build rule for target.
-CMakeFiles/untitled1.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/tmp.p3vpVaVXj0/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target untitled1"
-.PHONY : CMakeFiles/untitled1.dir/all
+CMakeFiles/fatCat.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/tmp.p3vpVaVXj0/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target fatCat"
+.PHONY : CMakeFiles/fatCat.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/untitled1.dir/rule: cmake_check_build_system
+CMakeFiles/fatCat.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.p3vpVaVXj0/cmake-build-debug/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/untitled1.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fatCat.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.p3vpVaVXj0/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/untitled1.dir/rule
+.PHONY : CMakeFiles/fatCat.dir/rule
 
 # Convenience name for target.
-untitled1: CMakeFiles/untitled1.dir/rule
-.PHONY : untitled1
+fatCat: CMakeFiles/fatCat.dir/rule
+.PHONY : fatCat
 
 # clean rule for target.
-CMakeFiles/untitled1.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/clean
-.PHONY : CMakeFiles/untitled1.dir/clean
+CMakeFiles/fatCat.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fatCat.dir/build.make CMakeFiles/fatCat.dir/clean
+.PHONY : CMakeFiles/fatCat.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
