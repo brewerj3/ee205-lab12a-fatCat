@@ -22,6 +22,13 @@ int main() {
     Weight weightObjectSix( Weight::SLUG, 10 );
     Weight weightObjectSeven(3.2, Weight::KILOGRAM, 50 );
 
+#ifdef DEBUG
+    Weight weightObjectTestOne( -10 );
+
+    weightObjectTestOne.dump();
+#endif
+
+#ifndef DEBUG
     weightObjectOne.dump();
     weightObjectTwo.dump();
     weightObjectThree.dump();
@@ -29,5 +36,6 @@ int main() {
     weightObjectFive.dump();
     weightObjectSix.dump();
     weightObjectSeven.dump();
+#endif
     return 0;
 }
