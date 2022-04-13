@@ -127,7 +127,13 @@ void Weight::dump() const noexcept {
     std::cout << std::setfill( ' ' );
     std::cout << std::left;
     std::cout << std::boolalpha;
-    FORMAT( "Weight", "This" ) << std::endl;
+    std::string className = "Weight";
+    FORMAT( className, "This" ) << this << std::endl;
+    FORMAT( className, "isKnown" ) << Weight::bWeightIsKnown << std::endl;
+    FORMAT( className, "weight" ) << Weight::weight << std::endl;
+    FORMAT( className, "unitOfWeight" ) << Weight::unitOfWeight << std::endl;
+    FORMAT( className, "hasMax" ) << Weight::bWeightHasMax << std::endl;
+    FORMAT( className, "maxWeight" ) << Weight::maximumWeight << std::endl << std::endl;
 }
 
 Weight::Weight() noexcept {
