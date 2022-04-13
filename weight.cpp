@@ -182,25 +182,29 @@ Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newM
 
 bool Weight::operator==(const Weight& rhs_Weight) const {
     float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
-    float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
+    float rhs_weight = (rhs_Weight.bWeightIsKnown) ? rhs_Weight.getWeight( Weight::POUND ) : 0;
     return lhs_weight == rhs_weight;
 }
 
 bool Weight::operator<(const Weight &rhs_Weight) const {
     float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
-    float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
+    float rhs_weight = (rhs_Weight.bWeightIsKnown) ? rhs_Weight.getWeight( Weight::POUND ) : 0;
     return lhs_weight < rhs_weight;
 }
 
 Weight& Weight::operator+=(float rhs_addToWeight) {
     float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
-    return lhs_weight += rhs_addToWeight;
+    lhs_weight += rhs_addToWeight;
+    setWeight(lhs_weight);
+    return *this;
 }
 
 std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
     switch( rhs_UnitOfWeight ) {
-        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL;
-        case Weight::KILOGRAM: return lhs_stream << Weight::KILOGRAM_LABEL;
-        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL;
+        case Weight::POUND:     return lhs_stream << Weight::POUND_LABEL;
+        case Weight::KILOGRAM:  return lhs_stream << Weight::KILOGRAM_LABEL;
+        case Weight::SLUG:      return lhs_stream << Weight::SLUG_LABEL;
+        default:                throw std::out_of_range( "This unit can't be mapped to a string" );
     }
+
 }
