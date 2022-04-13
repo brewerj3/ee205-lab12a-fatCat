@@ -16,7 +16,7 @@
 
 class Weight{
 private:
-    enum UnitsOfWeight{ POUND, NEWTON, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
+    enum UnitOfWeight{ POUND, SLUG, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
 
     static const float KILOGRAMS_IN_A_SLUG;
     static const float POUNDS_IN_A_KILOGRAM;
@@ -31,6 +31,12 @@ private:
     static float fromPoundToKilogram( float pound ) noexcept;
     static float fromPoundToSlug( float pound ) noexcept;
 
+
+
     float currentWeight;
+    UnitOfWeight currentUnit;
+public:
+
+    static float convertWeight( float fromWeight, UnitOfWeight fromUnit, UnitOfWeight toUnit ) noexcept;
 
 };
