@@ -49,7 +49,7 @@ public:
     bool isWeightValid( float weightToValidate );
     bool validate() const noexcept;
 
-    //Print out of Class
+    //Print out from Class
     void dump() const noexcept;
 
     //Constructors
