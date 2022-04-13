@@ -35,7 +35,7 @@ public:
 
     //getters
     float getWeight() const noexcept;
-    float getWeight( UnitOfWeight weightUnit );
+    float getWeight( UnitOfWeight weightUnit ) const noexcept;
     float getMaxWeight() const noexcept;
     UnitOfWeight getWeightUnit() const noexcept;
 

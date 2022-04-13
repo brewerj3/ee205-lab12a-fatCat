@@ -68,7 +68,7 @@ float Weight::getWeight() const noexcept {
     return weight;
 }
 
-float Weight::getWeight(Weight::UnitOfWeight weightUnit) {
+float Weight::getWeight(Weight::UnitOfWeight weightUnit) const noexcept {
     return convertWeight(getWeight(), getWeightUnit(), weightUnit );
 }
 
@@ -180,7 +180,7 @@ Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newM
     bWeightHasMax = true;
 }
 
-bool Weight::operator==(const Weight &rhs_Weight) const {
+bool Weight::operator==(const Weight& rhs_Weight) const {
     float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
     float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
     return false;
