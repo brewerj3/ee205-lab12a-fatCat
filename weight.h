@@ -68,10 +68,4 @@ private:
     bool bWeightIsKnown = false;
 };
 
-std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
-    switch( rhs_UnitOfWeight ) {
-        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL;
-        case Weight::KILOGRAM: return lhs_stream << Weight::KILOGRAM_LABEL;
-        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL;
-    }
-}
+std::ostream& operator<<( std::ostream& lhs_stream, Weight::UnitOfWeight rhs_UnitOfWeight );
