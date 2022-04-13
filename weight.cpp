@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <cassert>
+#include <iomanip>
 
 #include "weight.h"
 
@@ -76,8 +78,9 @@ void Weight::setWeight(float newWeight) {
         std::cout << "Invalid Weight when trying to set weight" << std::endl;
         return;
     }
-    weight = newWeight;
 
+    weight = newWeight;
+    bWeightIsKnown = true;
 }
 
 void Weight::setWeight(float newWeight, Weight::UnitOfWeight newUnit) {
@@ -86,6 +89,7 @@ void Weight::setWeight(float newWeight, Weight::UnitOfWeight newUnit) {
         return;
     }
     weight = newWeight;
+    bWeightIsKnown = true;
     unitOfWeight = newUnit;
 }
 
@@ -109,5 +113,54 @@ bool Weight::isWeightValid(float weightToValidate) {
 
 bool Weight::validate() const noexcept {
     return true; //@TODO Make this acutally useful
+}
+
+void Weight::dump() const noexcept {
+    assert(validate());
+    std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl;
+
+}
+
+Weight::Weight() noexcept {
+
+}
+
+Weight::Weight(float newWeight) {
+    setWeight( newWeight );
+}
+
+Weight::Weight(Weight::UnitOfWeight newUnitOfWeight) noexcept {
+    unitOfWeight = newUnitOfWeight;
+}
+
+Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight) {
+    setWeight( newWeight, newUnitOfWeight );
+}
+
+Weight::Weight(float newWeight, float newMaxWeight) {
+    setWeight( newWeight );
+    if( newMaxWeight <= 0 ) {
+        return;
+    }
+    maximumWeight = newMaxWeight;
+    bWeightHasMax = true;
+}
+
+Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+    unitOfWeight = newUnitOfWeight;
+    if( newMaxWeight <= 0 ) {
+        return;
+    }
+    maximumWeight = newMaxWeight;
+    bWeightHasMax = true;
+}
+
+Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+    setWeight( newWeight, newUnitOfWeight );
+    if( newMaxWeight <= 0 ) {
+        return;
+    }
+    maximumWeight = newMaxWeight;
+    bWeightHasMax = true;
 }
 

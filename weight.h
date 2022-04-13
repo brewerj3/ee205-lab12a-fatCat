@@ -9,6 +9,8 @@
 /// @date   12_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#define FORMAT( className, member ) std::cout << setw(8) << (classname) << setw(20) << (member) << setw(52)
+
 class Weight{
 public:
     enum UnitOfWeight{ POUND, SLUG, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
@@ -42,6 +44,9 @@ public:
     bool isWeightValid( float weightToValidate );
     bool validate() const noexcept;
 
+    //Print out of Class
+    void dump() const noexcept;
+
     //Constructors
     Weight() noexcept;
     Weight( float newWeight );
@@ -52,7 +57,7 @@ public:
     Weight( float newWeight, UnitOfWeight newUnitOfWeight, float newMaxWeight );
 private:
     UnitOfWeight unitOfWeight = POUND;
-    float weight;
+    float weight = UNKNOWN_WEIGHT;
     float maximumWeight;
     bool bWeightHasMax = false;
     bool bWeightIsKnown = false;
