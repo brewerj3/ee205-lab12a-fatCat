@@ -11,6 +11,7 @@
 
 #define FORMAT( className, member ) std::cout << std::setw(8) << (className) << std::setw(20) << (member) << std::setw(52)
 
+
 class Weight{
 public:
     enum UnitOfWeight{ POUND, SLUG, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
@@ -66,3 +67,11 @@ private:
     bool bWeightHasMax = false;
     bool bWeightIsKnown = false;
 };
+
+std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
+    switch( rhs_UnitOfWeight ) {
+        case Weight::POUND: return lhs_stream << Weight::POUND_LABEL;
+        case Weight::KILOGRAM: return lhs_stream << Weight::KILOGRAM_LABEL;
+        case Weight::SLUG: return lhs_stream << Weight::SLUG_LABEL;
+    }
+}
