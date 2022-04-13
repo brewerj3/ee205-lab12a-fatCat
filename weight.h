@@ -16,19 +16,20 @@
 
 class Weight{
 private:
-    // weight is not the same as mass. In physics weight is a force that mass produces.
-    // I am going to make it more difficult for myself by trying to distinguish the two.
-    enum UnitsOfWeight{ POUND, NEWTON }; //Pounds and Newtons are measures of weight
-    enum UnitsOfMass{ KILOGRAM, SLUG }; //Kilograms and Slugs are measures of mass
-    static const float GRAVITATIONAL_ACCELERATION;
+    enum UnitsOfWeight{ POUND, NEWTON, KILOGRAM }; //Pounds and Newtons are measures of force, Kilogram is a measure of Mass
 
     static const float KILOGRAMS_IN_A_SLUG;
-    static const float NEWTONS_IN_A_POUND;
+    static const float POUNDS_IN_A_KILOGRAM;
+    static const float POUNDS_IN_A_SLUG;
 
     static float fromSlugToKilogram( float slug ) noexcept;
+    static float fromSlugToPound( float slug ) noexcept;
+
     static float fromKilogramToSlug( float kilogram ) noexcept;
-    static float fromPoundToNewton( float pound ) noexcept;
-    static float fromNewtonToPound( float newton ) noexcept;
+    static float fromKilogramToPound( float kilogram ) noexcept;
+
+    static float fromPoundToKilogram( float pound ) noexcept;
+    static float fromPoundToSlug( float pound ) noexcept;
 
     float currentWeight;
 

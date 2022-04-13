@@ -11,7 +11,31 @@
 
 #include "weight.h"
 
-const float Weight::GRAVITATIONAL_ACCELERATION = 9.8 ;
-
 const float Weight::KILOGRAMS_IN_A_SLUG = 14.59390 ;
-const float Weight::NEWTONS_IN_A_POUND = 4.448222 ;
+const float Weight::POUNDS_IN_A_KILOGRAM = 2.20462 ;
+const float Weight::POUNDS_IN_A_SLUG = 32.174 ;
+
+float Weight::fromSlugToKilogram(float slug) noexcept {
+    return slug * KILOGRAMS_IN_A_SLUG;
+}
+
+float Weight::fromSlugToPound(float slug) noexcept {
+    return slug * POUNDS_IN_A_SLUG;
+}
+
+float Weight::fromKilogramToSlug(float kilogram) noexcept {
+    return kilogram / KILOGRAMS_IN_A_SLUG;
+}
+
+float Weight::fromKilogramToPound(float kilogram) noexcept {
+    return kilogram / POUNDS_IN_A_KILOGRAM;
+}
+
+float Weight::fromPoundToKilogram(float pound) noexcept {
+    return pound * POUNDS_IN_A_KILOGRAM;
+}
+
+float Weight::fromPoundToSlug(float pound) noexcept {
+    return pound / POUNDS_IN_A_SLUG;
+}
+
