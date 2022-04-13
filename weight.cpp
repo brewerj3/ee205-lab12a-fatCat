@@ -124,13 +124,16 @@ bool Weight::isWeightValid(float weightToValidate) {
 }
 
 bool Weight::validate() const noexcept {
-    return true; //@TODO Make this acutally useful
+    return true; //@TODO Make this actually useful
 }
 
 void Weight::dump() const noexcept {
     assert(validate());
     std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl;
-
+    std::cout << std::setfill( ' ' );
+    std::cout << std::left;
+    std::cout << std::boolalpha;
+    FORMAT( "Weight", "This" ) << std::endl;
 }
 
 Weight::Weight() noexcept {

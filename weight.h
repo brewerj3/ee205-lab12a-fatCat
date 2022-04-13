@@ -9,7 +9,7 @@
 /// @date   12_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#define FORMAT( className, member ) std::cout << setw(8) << (classname) << setw(20) << (member) << setw(52)
+#define FORMAT( className, member ) std::cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 class Weight{
 public:
