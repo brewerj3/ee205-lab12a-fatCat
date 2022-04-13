@@ -183,7 +183,18 @@ Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newM
 bool Weight::operator==(const Weight& rhs_Weight) const {
     float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
     float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
-    return false;
+    return lhs_weight == rhs_weight;
+}
+
+bool Weight::operator<(const Weight &rhs_Weight) const {
+    float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
+    float rhs_weight = (rhs_Weight.isWeightKnown) ? rhs_Weight.getWeight( Weight::POUND );
+    return lhs_weight < rhs_weight;
+}
+
+Weight& Weight::operator+=(float rhs_addToWeight) {
+    float lhs_weight = (bWeightIsKnown) ? getWeight( Weight::POUND ) : 0;
+    return lhs_weight += rhs_addToWeight;
 }
 
 std::ostream& operator<<( std::ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
